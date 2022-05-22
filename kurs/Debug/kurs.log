@@ -1,0 +1,52 @@
+﻿  list_methods.cpp
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list.h(13,1): error C2955: "node_list": для использования класс шаблон требуется список аргументов шаблон
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list.h(6): message : см. объявление "node_list"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list.h(45): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "ListOfNum<T>"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(9,32): error C2760: синтаксическая ошибка: непредвиденный токен "идентификатор"; требуется "спецификатор типа"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(27,32): error C2760: синтаксическая ошибка: непредвиденный токен "идентификатор"; требуется "спецификатор типа"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(46,18): error C2187: синтаксическая ошибка: непредвиденный здесь элемент ")"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(77,5): error C2065: Node: необъявленный идентификатор
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(77,5): error C3861: Node: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(77,11): error C3861: current: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(79,13): error C3861: current: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(81,9): error C3861: current: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(81,19): error C3861: current: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(91,9): error C2065: Node: необъявленный идентификатор
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(91,9): error C3861: Node: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(91,15): error C3861: current: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(92,41): error C2065: current: необъявленный идентификатор
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(92,41): error C3861: current: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(92,51): error C3861: current: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(93,16): error C3861: current: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(188,1): error C2244: ListOfNum<T>::operator []: не удается сопоставить определение функции существующему объявлению
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(187): message : см. объявление "ListOfNum<T>::operator []"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(188,1): message : определение
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(188,1): message : 'T ListOfNum<T>::operator [](size_t)'
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(188,1): message : существующие объявления
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(188,1): message : 'T &ListOfNum<T>::operator [](size_t)'
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(239,1): error C2563: несоответствие в списке формальных параметров
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(239,1): error C2568: <: не удается разрешить перегрузку функции
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(239,1): message : может быть "iterator_traits<_Iter>::difference_type std::count(const _InIt,const _InIt,const _Ty &)"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(235,22): error C3861: At: идентификатор не найден
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list_methods.cpp(235,24): message : "At": объявление функции должно быть доступно, так как ни один из аргументов не зависит от параметра шаблона
+  main.cpp
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list.h(13,1): error C2955: "node_list": для использования класс шаблон требуется список аргументов шаблон
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list.h(6): message : см. объявление "node_list"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list.h(45): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "ListOfNum<T>"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.h(7,1): error C2011: String: переопределение типа "class"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.h(6): message : см. объявление "String"
+  string.cpp
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list.h(13,1): error C2955: "node_list": для использования класс шаблон требуется список аргументов шаблон
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list.h(6): message : см. объявление "node_list"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\list.h(45): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "ListOfNum<T>"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.cpp(20,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.cpp(37,10): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.cpp(48,12): error C2065: line: необъявленный идентификатор
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.cpp(109,73): error C2679: бинарный "+": не найден оператор, принимающий правый операнд типа "char" (или приемлемое преобразование отсутствует)
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.h(32,19): message : может быть "String operator +(const String &,const String &)" [найдено при поиске с зависимостью от аргументов]
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.cpp(109,73): message : при попытке сопоставить список аргументов "(String, char)"
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.cpp(131,10): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.cpp(140,10): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.cpp(150,10): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Артур\Desktop\АиСД 4 семестр\4\kurs\kurs\string.cpp(151,10): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Создание кода...
