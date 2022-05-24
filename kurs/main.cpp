@@ -6,7 +6,8 @@ using namespace std;
 
 int main()
 {
-	Ford_Fulkerson f;
-	string a = "test.txt";
-	f.Read_from_file(a);
+	Ford_Fulkerson example;
+	string file_name = "test.txt";
+	example.search_max_flow(file_name);
+	return 0;
 }

@@ -16,7 +16,7 @@ public:
             : value(value), num(0) {}
 	};
 	ListOfNum<string> list;
-	int size = 0;
+	int size_line = 0;
 	int** array = nullptr;
 	int length_line = 2;
 	ListOfNum<edge> list_2;
@@ -25,30 +25,36 @@ public:
     {
         ifstream file;
         file.open(file_name);
-		string text;
-		int start = -1;
-		int finish = -1;
+		string text_from_file;
+		int start_point = -1;
+		int finish_point = -1;
 		if (file.is_open())
 		{
 			int i = -1;
 			while (!file.eof())
 			{
-				file >> text;
+				file >> text_from_file;
 				i++;
-				if (!list.contains(text) && i < length_line) list.push_back(text);
-				else if (i == 2) i = -1;
-				text = "";
+				if (!list.contains(text_from_file) && i < length_line)
+				{
+					list.push_back(text_from_file);
+				}
+				else if (i == 2)
+				{
+					i = -1;
+				}
+				text_from_file = "";
 			}
 			file.close();
 		}
-		size = list.get_size();
-		if (size > 0)
+		size_line = list.get_size();
+		if (size_line > 0)
 		{
-			array = new int* [size];
-			for (int i = 0; i < size; i++)
+			array = new int* [size_line];
+			for (int i = 0; i < size_line; i++)
 			{
-				array[i] = new int[size];
-				for (int j = 0; j < size; j++) array[i][j] = 0;
+				array[i] = new int[size_line];
+				for (int j = 0; j < size_line; j++) array[i][j] = 0;
 			}
 			file.open(file_name);
 			string sum;
@@ -56,56 +62,50 @@ public:
 			{
 				while (!file.eof())
 				{
-					file >> text;
-					if (start == -1)
+					file >> text_from_file;
+					if (start_point == -1)
 					{
-						start = list.search(text);
+						start_point = list.search(text_from_file);
 						continue;
 					}
-					else if (finish == -1)
+					else if (finish_point == -1)
 					{
-						start = list.search(text);
+						start_point = list.search(text_from_file);
 						continue;
 					}
-					array[start][finish] = atoi(text.c_str());
-					start = -1;
-					finish = -1;
+					array[start_point][finish_point] = atoi(text_from_file.c_str());
+					start_point = finish_point = -1;
 				}
-				/*std::cout << "Initial matrix" << endl;
-				std::cout << "  ";
-				for (int i = 0; i < size; i++)
+				cout << "Matrix graph" << endl;
+				for (int i = 0; i < size_line; i++)
 				{
-					cout << list.get_elem(i) << " ";
+					cout << list.get_elem(i);
+					for (int j = 0; j < size_line; j++) cout << array[i][j];
 				}
 				cout << endl;
-				for (int i = 0; i < size; i++)
-				{
-					std::cout << list.get_elem(i) << " ";
-					for (int j = 0; j < size; j++)
-					{
-						std::cout << array[i][j] << " ";
-					}
-					std::cout << endl;
-				}
-				std::cout << endl;*/
 				file.close();
 			}
 		}
     }
-	int max_flow()
+	int search_max_flow(string file_name)
 	{
-		int start = list.search("S");
-		int finish = list.search("T");
-		int temp = 0, min = 0, sum = 0;
+		Read_from_file(file_name);
+		int start_point_2 = list.search("S");
+		int finish_point_2 = list.search("T");
+		int temp = 0;
+		int min_value = 0;
+		int flow = 0;
 		edge symbol;
 		bool is = false;
 		do
 		{
-			is = false;
-			for (int j = 0; j < size && !is; j++) is = array[start][j];
+			for (int j = 0; j < size_line && !is; j++)
+			{
+				is = array[start_point_2][j];
+			}
 			if (is)
 			{
-				for (int j = 0, i = start; j < size; j++)
+				for (int j = 0, i = start_point_2; j < size_line; j++)
 				{
 					if (array[i][j] > 0)
 					{
@@ -115,43 +115,44 @@ public:
 						i = j;
 						j = -1;
 					}
-					if (i == finish) break;
-					else if (j == size - 1)
+					if (i == finish_point_2) break;
+					else if (j == size_line - 1)
 					{
-						if (list_2.get_size() == 1) i = start;
-						else i = list_2.get_elem(list_2.get_size() - 2).num;
+						if (list_2.get_size() == 1)
+						{
+							i = start_point_2;
+						}
+						else
+						{
+							i = list_2.get_elem(list_2.get_size() - 2).num;
+						}
 						array[i][list_2.get_elem(list_2.get_size() - 1).num] = 0;
 						list_2.clear();
 						j = -1;
-						if (i == start) break;
-						i = start;
+						if (i == start_point_2)
+						{
+							break;
+						}
+						i = start_point_2;
 					}
 				}
-				if (list_2.get_size()) min = list_2.get_elem(0).value;
-				for (int j = 0, i = start; j < list_2.get_size(); j++)
+				if (list_2.get_size())
 				{
-					if (min > list_2.get_elem(j).value) min = list_2.get_elem(j).value;
-					if (j == list_2.get_size() - 1) sum += min;
+					min_value = list_2.get_elem(0).value;
 				}
-				for (int j = 0, i = start; j < list_2.get_size(); i = list_2.get_elem(j).num, j++) array[i][list_2.get_elem(j).num] -= min;
+				for (int j = 0, i = start_point_2; j < list_2.get_size(); j++)
+				{
+					if (min_value > list_2.get_elem(j).value) min_value = list_2.get_elem(j).value;
+					if (j == list_2.get_size() - 1) flow += min_value;
+				}
+				for (int j = 0, i = start_point_2; j < list_2.get_size(); i = list_2.get_elem(j).num, j++)
+				{
+					array[i][list_2.get_elem(j).num] -= min_value;
+				}
 				list_2.clear();
-				/*for (i = 0; i < size; i++)
-				{
-					std::cout << namecol.get_elem(i) << " ";
-				}
-				std::cout << endl;
-				for (i = 0; i < size; i++)
-				{
-					std::cout << namecol.get_elem(i) << " ";
-					for (int j = 0; j < size; j++)
-					{
-						std::cout << matrix[i][j] << " ";
-					}
-					std::cout << endl;
-				}
-				std::cout << endl;*/
 			}
 		} while (is);
-		return sum;
+		cout << "Max flow is " << flow << endl;
+		return flow;
 	}
 };
