@@ -79,7 +79,6 @@ public:
 				cout << "Matrix graph" << endl;
 				for (int i = 0; i < size_line; i++)
 				{
-					cout << list.get_elem(i);
 					for (int j = 0; j < size_line; j++) cout << array[i][j];
 				}
 				cout << endl;
